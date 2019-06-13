@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="kingcwt.github.io/"/>
-  <updated>2019-06-12T06:50:23.521Z</updated>
+  <updated>2019-06-13T02:46:43.891Z</updated>
   <id>kingcwt.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>jsDelivr访问github资源</title>
+    <link href="kingcwt.github.io/2019/06/13/jsdelivr/"/>
+    <id>kingcwt.github.io/2019/06/13/jsdelivr/</id>
+    <published>2019-06-13T02:18:00.000Z</published>
+    <updated>2019-06-13T02:46:43.891Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;搭建自己的博客把一些图片通过jsdelivr托管在github上&quot;&gt;&lt;a href=&quot;#搭建自己的博客把一些图片通过jsdelivr托管在github上&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="kingcwt.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="web" scheme="kingcwt.github.io/tags/web/"/>
+    
+      <category term="笔记" scheme="kingcwt.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo-Theme-Sakura</title>
-    <link href="kingcwt.github.io/2018/12/12/Hexo-Theme-Sakura/"/>
-    <id>kingcwt.github.io/2018/12/12/Hexo-Theme-Sakura/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-06-12T06:50:23.521Z</updated>
+    <link href="kingcwt.github.io/2019/06/13/Hexo-Theme-Sakura/"/>
+    <id>kingcwt.github.io/2019/06/13/Hexo-Theme-Sakura/</id>
+    <published>2019-06-13T01:30:01.000Z</published>
+    <updated>2019-06-13T02:25:24.370Z</updated>
     
     <summary type="html">
     
