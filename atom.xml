@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="kingcwt.github.io/"/>
-  <updated>2019-06-13T06:52:26.533Z</updated>
+  <updated>2019-06-14T03:56:24.165Z</updated>
   <id>kingcwt.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pug观后记</title>
+    <link href="kingcwt.github.io/2019/06/14/pugNote/"/>
+    <id>kingcwt.github.io/2019/06/14/pugNote/</id>
+    <published>2019-06-14T01:53:00.000Z</published>
+    <updated>2019-06-14T03:56:24.165Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;看pug文档记录一些知识&quot;&gt;&lt;a href=&quot;#看pug文档记录一些知识&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="kingcwt.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="web" scheme="kingcwt.github.io/tags/web/"/>
+    
+      <category term="笔记" scheme="kingcwt.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>jsDelivr访问github资源</title>

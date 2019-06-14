@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: 悦读 | 来日可期</title>
+  <title itemprop="name">pug观后记 | 来日可期</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -383,64 +383,309 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/reading.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/kingcwt/kingcwt-blog@1.1.5/zs2.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/kingcwt/kingcwt-blog@1.1.5/zs2.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      pug观后记</h1>
+      <p class="entry-census">
+        <span>
+          <a href>
+            <img src="/images/favicon.ico">
+          </a>
+        </span>
+        <span>
+          <a href>kingCwt</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2019-6-14<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">悦读</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/06/13/Hexo-Theme-Sakura/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h5 id="看pug文档记录一些知识"><a href="#看pug文档记录一些知识" class="headerlink" title="看pug文档记录一些知识"></a>看pug文档记录一些知识</h5><ul>
+<li>好记性不如烂笔头</li>
+</ul>
+<ul>
+<li><p>什么是pug，pug其实就是一个语法糖,好比写css 我们可以用less写一样 无非就是html换成啦pug,记录一下常用的pug语法坑以此勉励自己</p>
+</li>
+<li><p>开始pug写作之前。一定要先 <code>npm install pug</code> 一下 </p>
+</li>
+<li>文档在这里 <a href="https://pug.bootcss.com/api/getting-started.html" target="_blank" rel="noopener">https://pug.bootcss.com/api/getting-started.html</a> </li>
+</ul>
+<h5 id="了解一下"><a href="#了解一下" class="headerlink" title="了解一下"></a>了解一下</h5><pre><code class="pug">
+//- template.pug
+p #{name}的 Pug 代码
+
+</code></pre>
+<pre><code class="pug">
+const pug = require(&#39;pug&#39;);
+const compiledFunction = pug.compileFile(&#39;template.pug&#39;);
+// 渲染一组数据
+console.log(compiledFunction({
+  name: &#39;李莉&#39;
+}));
+// &quot;&lt;p&gt;李莉的 Pug 代码！&lt;/p&gt;&quot;
+
+// 渲染另外一组数据
+console.log(compiledFunction({
+  name: &#39;张伟&#39;
+}));
+// &quot;&lt;p&gt;张伟的 Pug 代码！&lt;/p&gt;&quot;
+
+
+----pug.renderFile 用法
+
+const pug = require(&#39;pug&#39;);
+
+// 编译并使用一组数据渲染 template.pug
+console.log(pug.renderFile(&#39;template.pug&#39;, {
+  name: &#39;Timothy&#39;
+}));
+// &quot;&lt;p&gt;Timothy 的 Pug 代码！&lt;/p&gt;&quot;
+
+
+
+OK 了解一下  文档有！
+
+</code></pre>
+<h4 id="在pug里用3元运算符"><a href="#在pug里用3元运算符" class="headerlink" title="在pug里用3元运算符"></a>在pug里用3元运算符</h4><ul>
+<li>提醒一下 注意代码的缩进 空格 </li>
+</ul>
+<pre><code class="pug">- var status=true
+body(class=status?&#39;authed&#39;:&#39;toni&#39;)
+
+==&gt;html
+&lt;body class=&quot;authed&quot;&gt;&lt;/body&gt;
+</code></pre>
+<h4 id="多行属性"><a href="#多行属性" class="headerlink" title="多行属性"></a>多行属性</h4><pre><code class="pug">input(
+type=&#39;checkbox&#39;
+name=&#39;cwt&#39;
+checked
+)
+===&gt; html
+
+&lt;input type=&#39;checkbox&#39; name=&#39;cwt&#39; checked&gt;
+
+</code></pre>
+<h4 id="变量存储"><a href="#变量存储" class="headerlink" title="变量存储"></a>变量存储</h4><pre><code class="pug">如果我们给一个标签写内容 就是空格 然后输入内容 比如
+p 123
+//这里的123就是内容最后编译成&lt;p&gt;123&lt;/p&gt;
+如果是变量呢？可以像下面这样
+- var url=&#39;好好学习 天天向上&#39;;
+p=url+&#39;我是字符串&#39;
+
+//最后编译成=&gt;
+&lt;p&gt;好好学习 天天向上 我是字符串&lt;/p&gt;
+- 算是一个写法把。因为在后面和后台数据交互会用到
+</code></pre>
+<h4 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h4><pre><code class="pug">p(style={color:&quot;red&quot;,background:&quot;blue&quot;})
+
+===&gt;html
+&lt;p style=&#39;color:red;background:blue&#39;&gt;&lt;/p&gt;
+</code></pre>
+<h4 id="简写标签和类名"><a href="#简写标签和类名" class="headerlink" title="简写标签和类名"></a>简写标签和类名</h4><pre><code class="pug">1 如果是div 我们可以简写成这样 如果是类名我们用.来表示 ,如果是id我们用#来表示
+  不是是类名还是id我们都依次写到后面就行 像下面这样 然后在加点属性
+.b#c(style={color:&quot;red&quot;,background:&quot;blue&quot;})
+==&gt;html
+&lt;div class=&#39;b&#39; id=&#39;c&#39; style=&#39;color:red;background:blue&#39;&gt;&lt;/div&gt;
+
+</code></pre>
+<h4 id="case语句"><a href="#case语句" class="headerlink" title="case语句"></a>case语句</h4><pre><code class="pug">
+- var friends=10
+case friends
+  when 0
+    p 你没有朋友
+  when 1
+    p 你有1个朋友
+  when 2
+    break  
+  default
+    p=&#39;你有&#39;+friends+&#39;朋友&#39;
+
+===&gt;html 
+&lt;p&gt;你有10朋友&lt;/p&gt;
+
+- 如果你不想在2的时候输出东西 你可以break跳过这个语句
+</code></pre>
+<h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><pre><code class="pug">- for (var x = 0; x &lt; 3; x++)
+  li item
+
+===&gt;html
+
+&lt;li&gt;item&lt;/li&gt;&lt;li&gt;item&lt;/li&gt;&lt;li&gt;item&lt;/li&gt;
+</code></pre>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><pre><code class="pug">
+//- - for (var x = 0; x &lt; 3; x++)
+  li item
+//
+</code></pre>
+<h4 id="unless-条件判断"><a href="#unless-条件判断" class="headerlink" title="unless 条件判断"></a>unless 条件判断</h4><pre><code class="pug">
+- var a=4;
+unless a&gt;3
+  p a大于3
+else
+  p none
+
+===&gt;html
+&lt;p&gt;none&lt;/p&gt;  
+
+
+- var b=4;
+if !a&gt;3
+  p a大于4
+else
+  p none
+
+===&gt;html
+&lt;p&gt;none&lt;/p&gt; 
+
+- 所以 以上两种方式是相等的 其实就是if true取反
+
+</code></pre>
+<h4 id="include"><a href="#include" class="headerlink" title="include"></a>include</h4><pre><code class="pug">list.pug
+
+header
+  title 我的网址
+</code></pre>
+<pre><code class="pug">
+doctype html
+html
+  include ./list.pug
+  body
+    h1 开始你的表演
+    p come
+
+===&gt;html
+&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;header&gt;&lt;title&gt;我的网址&lt;/title&gt;&lt;/header&gt;&lt;body&gt;&lt;h1&gt;开始你的表演&lt;/h1&gt;&lt;p&gt;come&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+
+- include 引入
+
+</code></pre>
+<h4 id="extends-模版继承"><a href="#extends-模版继承" class="headerlink" title="extends 模版继承"></a>extends 模版继承</h4><pre><code class="pug">//- layout.pug
+html
+  head
+    title 我的站点 - #{title}
+  body
+      block content  
+
+</code></pre>
+<pre><code class="pug">extends layout.pug
+block content
+  h1 123
+
+===&gt;html
+&lt;html&gt;&lt;head&gt;&lt;title&gt;我的站点&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;123&lt;/h1&gt;&lt;div id=&quot;footer&quot;&gt;&lt;p&gt;一些页脚的内容&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
+
+</code></pre>
+<h4 id="标签嵌入"><a href="#标签嵌入" class="headerlink" title="标签嵌入"></a>标签嵌入</h4><pre><code class="pug">p.
+  这是一个很长很长而且还很无聊的段落，还没有结束，是的，非常非常地长。
+  突然出现了一个 #[strong 充满力量感的单词]，这确实让人难以 #[em 忽视]。
+p.
+  使用带属性的嵌入标签的例子：
+  #[q(lang=&quot;es&quot;) ¡Hola Mundo!]
+
+===&gt;html 
+&lt;p&gt;这是一个很长很长而且还很无聊的段落，还没有结束，是的，非常非常地长。
+突然出现了一个 &lt;strong&gt;充满力量感的单词&lt;/strong&gt;，这确实让人难以 &lt;em&gt;忽视&lt;/em&gt;。&lt;/p&gt;&lt;p&gt;使用带属性的嵌入标签的例子：
+&lt;q lang=&quot;es&quot;&gt;¡Hola Mundo!&lt;/q&gt;&lt;/p&gt;
+</code></pre>
+
         </div>
-        <img width="150" height="150" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/06/13/Hexo-Theme-Sakura/">
-    Hexo-Theme-Sakura</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-6-13</div>
-    <p>
-    hexo-sakura主题使用教程</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/06/13/Hexo-Theme-Sakura/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/kingcwt/kingcwt-blog@1.1.5/zfbsk.jpeg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/kingcwt/kingcwt-blog@1.1.5/wxsk.jpeg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2019/06/13/jsdelivr/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/kingcwt/kingcwt-blog@1.1.4/zs2.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                jsDelivr访问github资源</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "8S64xbxR2jxVD4tYMCNJohfA-gzGzoHsz",
+        appKey: "mIGeww7RdO4iIq4iNAY0LbEP",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href class="profile gravatar"><img src="/images/favicon.ico" itemprop="image" alt="kingCwt" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href itemprop="url" rel="author">kingCwt</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
